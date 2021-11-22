@@ -1,0 +1,8 @@
+server:
+  port: 8101
+  servlet:
+    context-path: /hr-payroll
+
+spring:
+  application:
+    name: hr-payroll
