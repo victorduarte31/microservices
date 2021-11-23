@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class PaymentService {
 
-
     private final WorkerFeign workerFeign;
 
     public Payment getPayment(Long workerId, int days) {
