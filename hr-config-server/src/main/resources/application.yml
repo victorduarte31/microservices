@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: hr-config-server
+  cloud:
+    config:
+      server:
+        git:
+          default-label: main
+          uri: https://github.com/victorduarte31/microservices-config
+          search-paths: hr-worker
+
+server:
+  port: 8888
+
