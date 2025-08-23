@@ -1,13 +1,22 @@
-package br.com.victor.ordering.validator;
+package br.com.victor.ordering.domain.validator;
 
 import org.apache.commons.validator.routines.EmailValidator;
 
 import java.util.Objects;
 
 public class FieldValidations {
-
     private FieldValidations() {
+    }
 
+    public static void requiresNonBlank(String value) {
+        requiresNonBlank(value, "");
+    }
+
+    public static void requiresNonBlank(String value, String errorMessage) {
+        Objects.requireNonNull(value);
+        if (value.isBlank()) {
+            throw new IllegalArgumentException();
+        }
     }
 
     public static void requiresValidEmail(String email) {
