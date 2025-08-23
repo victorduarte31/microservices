@@ -1,12 +1,14 @@
 package br.com.victor.ordering.domain.entity;
 
 
-import org.apache.commons.validator.routines.EmailValidator;
+import br.com.victor.ordering.validator.FieldValidations;
 
 import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 import java.util.UUID;
+
+import static br.com.victor.ordering.exception.ErrorMessages.*;
 
 public class Customer {
 
@@ -22,13 +24,8 @@ public class Customer {
     private OffsetDateTime archivedAt;
     private Integer loyaltyPoints;
 
-    public Customer(UUID id,
-                    String fullName,
-                    LocalDate birthDate,
-                    String email,
-                    String phone,
-                    String document,
-                    Boolean promotionNotificationsAllowed,
+    public Customer(UUID id, String fullName, LocalDate birthDate, String email,
+                    String phone, String document, Boolean promotionNotificationsAllowed,
                     OffsetDateTime registeredAt) {
         this.setId(id);
         this.setFullName(fullName);
@@ -38,20 +35,13 @@ public class Customer {
         this.setDocument(document);
         this.setPromotionNotificationsAllowed(promotionNotificationsAllowed);
         this.setRegisteredAt(registeredAt);
+        this.setArchived(false);
         this.setLoyaltyPoints(0);
     }
 
-    public Customer(UUID id,
-                    String fullName,
-                    LocalDate birthDate,
-                    String email,
-                    String phone,
-                    String document,
-                    Boolean promotionNotificationsAllowed,
-                    Boolean archived,
-                    OffsetDateTime registeredAt,
-                    OffsetDateTime archivedAt,
-                    Integer loyaltyPoints) {
+    public Customer(UUID id, String fullName, LocalDate birthDate, String email, String phone,
+                    String document, Boolean promotionNotificationsAllowed, Boolean archived,
+                    OffsetDateTime registeredAt, OffsetDateTime archivedAt, Integer loyaltyPoints) {
         this.setId(id);
         this.setFullName(fullName);
         this.setBirthDate(birthDate);
@@ -59,18 +49,18 @@ public class Customer {
         this.setPhone(phone);
         this.setDocument(document);
         this.setPromotionNotificationsAllowed(promotionNotificationsAllowed);
-        this.setArchived(false);
+        this.setArchived(archived);
         this.setRegisteredAt(registeredAt);
         this.setArchivedAt(archivedAt);
         this.setLoyaltyPoints(loyaltyPoints);
     }
 
-    public void addLoyaltyPoints(Integer points) {
-        this.loyaltyPoints += points;
+    public void addLoayltyPoints(Integer points) {
+
     }
 
     public void archive() {
-       this.setArchived(true);
+
     }
 
     public void enablePromotionNotifications() {
@@ -78,22 +68,20 @@ public class Customer {
     }
 
     public void disablePromotionNotifications() {
-       this.setPromotionNotificationsAllowed(false);
+        this.setPromotionNotificationsAllowed(false);
     }
 
     public void changeName(String fullName) {
-       this.setFullName(fullName);
+        this.setFullName(fullName);
     }
 
     public void changeEmail(String email) {
-       this.setEmail(email);
+        this.setEmail(email);
     }
 
     public void changePhone(String phone) {
-       this.setPhone(phone);
+        this.setPhone(phone);
     }
-
-    // Metodos getter seguindo padrao records
 
     public UUID id() {
         return id;
@@ -139,17 +127,15 @@ public class Customer {
         return loyaltyPoints;
     }
 
-    // inicio dos metodos setter
-
     private void setId(UUID id) {
         Objects.requireNonNull(id);
         this.id = id;
     }
 
     private void setFullName(String fullName) {
-        Objects.requireNonNull(fullName);
+        Objects.requireNonNull(fullName, VALIDATION_ERROR_FULLNAME_IS_NULL);
         if (fullName.isBlank()) {
-            throw new IllegalArgumentException("Nome completo não pode ser vazio");
+            throw new IllegalArgumentException(VALIDATION_ERROR_FULLNAME_IS_BLANK);
         }
         this.fullName = fullName;
     }
@@ -160,20 +146,13 @@ public class Customer {
             return;
         }
         if (birthDate.isAfter(LocalDate.now())) {
-            throw new IllegalArgumentException("Data de nascimento não pode ser no futuro");
+            throw new IllegalArgumentException(VALIDATION_ERROR_BIRTHDATE_MUST_IN_PAST);
         }
         this.birthDate = birthDate;
     }
 
     private void setEmail(String email) {
-        Objects.requireNonNull(email);
-        if (email.isBlank()) {
-            throw new IllegalArgumentException("Email não pode ser vazio");
-        }
-
-        if (EmailValidator.getInstance().isValid(email)) {
-            throw new IllegalArgumentException("Email invalido");
-        }
+        FieldValidations.requiresValidEmail(email, VALIDATION_ERROR_EMAIL_IS_INVALID);
         this.email = email;
     }
 
@@ -188,17 +167,17 @@ public class Customer {
     }
 
     private void setPromotionNotificationsAllowed(Boolean promotionNotificationsAllowed) {
-        Objects.requireNonNull(document);
+        Objects.requireNonNull(promotionNotificationsAllowed);
         this.promotionNotificationsAllowed = promotionNotificationsAllowed;
     }
 
     private void setArchived(Boolean archived) {
-        Objects.requireNonNull(document);
+        Objects.requireNonNull(archived);
         this.archived = archived;
     }
 
     private void setRegisteredAt(OffsetDateTime registeredAt) {
-        Objects.requireNonNull(document);
+        Objects.requireNonNull(registeredAt);
         this.registeredAt = registeredAt;
     }
 
@@ -207,7 +186,7 @@ public class Customer {
     }
 
     private void setLoyaltyPoints(Integer loyaltyPoints) {
-        Objects.requireNonNull(document);
+        Objects.requireNonNull(loyaltyPoints);
         this.loyaltyPoints = loyaltyPoints;
     }
 

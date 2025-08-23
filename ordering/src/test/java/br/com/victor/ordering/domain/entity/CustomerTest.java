@@ -1,0 +1,43 @@
+package br.com.victor.ordering.domain.entity;
+
+import br.com.victor.ordering.domain.utility.IdGenerator;
+import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
+
+public class CustomerTest {
+
+    @Test
+    void given_invalidEmail_whenTryCreateCustomer_shouldGenerateException() {
+        Assertions.assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(()-> new Customer(
+                        IdGenerator.generate(),
+                        "John Doe",
+                        LocalDate.of(1991, 7, 5),
+                        "invalid",
+                        "478-256-2504",
+                        "255-08-0578",
+                        false,
+                        OffsetDateTime.now()
+                ));
+    }
+
+    @Test
+    void given_invalidEmail_whenTryUpdatedCustomerEmail_shouldGenerateException() {
+        Customer customer = new Customer(
+                IdGenerator.generate(),
+                "John Doe",
+                LocalDate.of(1991, 7, 5),
+                "john.doe@gmail.com",
+                "478-256-2504",
+                "255-08-0578",
+                false,
+                OffsetDateTime.now()
+        );
+
+        Assertions.assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(()-> customer.changeEmail("invalid"));
+    }
+}
