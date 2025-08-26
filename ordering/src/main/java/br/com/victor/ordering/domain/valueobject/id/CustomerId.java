@@ -1,4 +1,4 @@
-package br.com.victor.ordering.domain.valueobject;
+package br.com.victor.ordering.domain.valueobject.id;
 
 import br.com.victor.ordering.domain.utility.IdGenerator;
 
@@ -7,13 +7,12 @@ import java.util.UUID;
 
 public record CustomerId(UUID value) {
 
-    public CustomerId() {
-        this(IdGenerator.generate());
+    public CustomerId {
+        Objects.requireNonNull(value);
     }
 
-    public CustomerId(UUID value) {
-        Objects.requireNonNull(value);
-        this.value = value;
+    public CustomerId() {
+        this(IdGenerator.generate());
     }
 
     @Override

@@ -3,6 +3,7 @@ package br.com.victor.ordering.domain.entity;
 
 import br.com.victor.ordering.domain.exception.CustomerArchivedException;
 import br.com.victor.ordering.domain.valueobject.*;
+import br.com.victor.ordering.domain.valueobject.id.CustomerId;
 import lombok.Builder;
 
 import java.time.OffsetDateTime;

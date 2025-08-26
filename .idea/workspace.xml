@@ -4,23 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2c1b5bb-47cd-4cd4-bf76-be2d4f108753" name="Changes" comment="adiciona método &quot;archive&quot; em &quot;Customer&quot; para arquivamento com anonimização e testes correspondentes">
-      <change afterPath="$PROJECT_DIR$/ordering/src/main/java/br/com/victor/ordering/domain/exception/CustomerArchivedException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordering/src/main/java/br/com/victor/ordering/domain/exception/DomainException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordering/src/main/java/br/com/victor/ordering/domain/valueobject/BirthDate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordering/src/main/java/br/com/victor/ordering/domain/valueobject/CustomerId.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordering/src/main/java/br/com/victor/ordering/domain/valueobject/Document.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordering/src/main/java/br/com/victor/ordering/domain/valueobject/Email.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordering/src/main/java/br/com/victor/ordering/domain/valueobject/FullName.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordering/src/main/java/br/com/victor/ordering/domain/valueobject/LoyaltyPoints.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordering/src/main/java/br/com/victor/ordering/domain/valueobject/Phone.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordering/src/main/java/br/com/victor/ordering/domain/valueobject/ZipCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordering/src/test/java/br/com/victor/ordering/domain/entity/CustomerTestDataBuilder.java" afterDir="false" />
+    <list default="true" id="a2c1b5bb-47cd-4cd4-bf76-be2d4f108753" name="Changes" comment="adiciona novos Value Objects ao domínio, atualiza &quot;Customer&quot; para utilizá-los, adiciona exceção &quot;CustomerArchivedException&quot; e cria testes correspondentes">
+      <change afterPath="$PROJECT_DIR$/ordering/src/main/java/br/com/victor/ordering/domain/valueobject/id/OrderId.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ordering/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ordering/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ordering/src/main/java/br/com/victor/ordering/domain/entity/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/ordering/src/main/java/br/com/victor/ordering/domain/entity/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ordering/src/main/java/br/com/victor/ordering/exception/ErrorMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/ordering/src/main/java/br/com/victor/ordering/domain/exception/ErrorMessages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ordering/src/main/java/br/com/victor/ordering/validator/FieldValidations.java" beforeDir="false" afterPath="$PROJECT_DIR$/ordering/src/main/java/br/com/victor/ordering/domain/validator/FieldValidations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ordering/src/test/java/br/com/victor/ordering/domain/entity/CustomerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ordering/src/test/java/br/com/victor/ordering/domain/entity/CustomerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ordering/src/main/java/br/com/victor/ordering/domain/utility/IdGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/ordering/src/main/java/br/com/victor/ordering/domain/utility/IdGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ordering/src/main/java/br/com/victor/ordering/domain/valueobject/CustomerId.java" beforeDir="false" afterPath="$PROJECT_DIR$/ordering/src/main/java/br/com/victor/ordering/domain/valueobject/id/CustomerId.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ordering/src/test/java/br/com/victor/ordering/domain/entity/CustomerTestDataBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/ordering/src/test/java/br/com/victor/ordering/domain/entity/CustomerTestDataBuilder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Exception" />
+        <option value="Class" />
         <option value="Record" />
       </list>
     </option>
@@ -37,24 +31,24 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "victorduarte31"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;victorduarte31&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/victorduarte31/microservices.git",
-    "accountId": "f8c8228e-90a6-45ef-8418-d307a72741f2"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/victorduarte31/microservices.git&quot;,
+    &quot;accountId&quot;: &quot;f8c8228e-90a6-45ef-8418-d307a72741f2&quot;
   }
-}]]></component>
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="31hDpc2NWDRj8EZJoA8AMcrmCz2" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -63,30 +57,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.CustomerTest.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.OrderingApplication.executor": "Run",
-    "git-widget-placeholder": "master",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/projetos/microservices/ordering",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.CustomerTest.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.ordering [compile].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.OrderingApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/projetos/microservices/ordering&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\projetos\microservices\ordering" />
@@ -136,7 +131,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1755967594457</updated>
-      <workItem from="1755967595755" duration="1275000" />
+      <workItem from="1755967595755" duration="2583000" />
+      <workItem from="1756230159232" duration="1365000" />
     </task>
     <task id="LOCAL-00001" summary="convertendo projeto para maven">
       <option name="closed" value="true" />
@@ -154,7 +150,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755968269784</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="adiciona novos Value Objects ao domínio, atualiza &quot;Customer&quot; para utilizá-los, adiciona exceção &quot;CustomerArchivedException&quot; e cria testes correspondentes">
+      <option name="closed" value="true" />
+      <created>1755968960350</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1755968960350</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,6 +167,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="convertendo projeto para maven" />
     <MESSAGE value="adiciona método &quot;archive&quot; em &quot;Customer&quot; para arquivamento com anonimização e testes correspondentes" />
-    <option name="LAST_COMMIT_MESSAGE" value="adiciona método &quot;archive&quot; em &quot;Customer&quot; para arquivamento com anonimização e testes correspondentes" />
+    <MESSAGE value="adiciona novos Value Objects ao domínio, atualiza &quot;Customer&quot; para utilizá-los, adiciona exceção &quot;CustomerArchivedException&quot; e cria testes correspondentes" />
+    <option name="LAST_COMMIT_MESSAGE" value="adiciona novos Value Objects ao domínio, atualiza &quot;Customer&quot; para utilizá-los, adiciona exceção &quot;CustomerArchivedException&quot; e cria testes correspondentes" />
   </component>
 </project>
